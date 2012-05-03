@@ -55,13 +55,28 @@ compared")
     parser.add_option("-l", "--list", action="store_true", dest="listproxies",
 		      help="List all proxies with times. Only the fastest shown\
  by default")
+    parser.add_option("-r", "--read", dest="proxyfile", default="~/.proxyfile",
+                      help="Read proxies from a file. Default file is ~/.proxyfile")
     (options, args) = parser.parse_args()
-    if not options.proxies:
+    if options.proxyfile[0]=='~':
+        print "here"
+        options.proxyfile = os.environ.get('HOME') + options.proxyfile.lstrip('~')
+        print options.proxyfile
+    if not options.proxies and not os.path.isfile(options.proxyfile):
         parser.error("No proxies provided")
     tlist = []
-    for proxy in options.proxies:
-        td = test_dwnld(proxy, options.url, options.timeout, options.filename)
-        tlist.append((proxy, td))
+    if options.proxies:
+        for proxy in options.proxies:
+            td = test_dwnld(proxy, options.url, options.timeout, options.filename)
+            tlist.append((proxy, td))
+    if os.path.isfile(options.proxyfile):
+        pf = open(options.proxyfile)
+        proxies = pf.readlines()
+        for proxy in proxies:
+            proxy=proxy.strip()
+            td = test_dwnld(proxy, options.url, options.timeout, options.filename)
+            tlist.append((proxy, td))
+        pf.close()
     tlist = sorted(tlist, key=lambda x:x[1])
     if not options.listproxies:
 	    print tlist[0][0]
