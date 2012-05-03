@@ -4,7 +4,6 @@ from time import time
 import os
 import optparse
 import subprocess
-from urllib2 import urlopen
 
 DEFAULT_URL = "http://mirror.cse.iitk.ac.in/archlinux/pool/packages/\
 wxgtk-2.8.12.1-3-i686.pkg.tar.xz"
