@@ -22,4 +22,5 @@ Options:
   -p, --proxies         proxies to be compared
   -l, --list            List all proxies with times. Only the fastest shown by
                         default
-
+  -r PROXYFILE, --read=PROXYFILE
+                        Read proxies from a file. Default file is ~/.proxyfile
