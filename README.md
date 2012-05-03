@@ -1,7 +1,7 @@
 handy-python-scipts
 ===================
 
-A collection of a few few handy python scripts.
+A collection of a few handy python scripts.
 
 find-fastest-proxy
 ------------------
