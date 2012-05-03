@@ -7,7 +7,7 @@ find-fastest-proxy
 ------------------
 
 A script that finds the fastest proxy from a given list by comparing the times
-taken to download contents from a URL.
+taken to download contents from a URL. wget is used for the downloads.
 
 Usage: ./find-fatest-proxy.py [options] -p proxy1 proxy2 ...
 
