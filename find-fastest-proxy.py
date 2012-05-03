@@ -12,16 +12,16 @@ DEFAULT_URL = "http://mirror.cse.iitk.ac.in/archlinux/pool/packages/\
 wxgtk-2.8.12.1-3-i686.pkg.tar.xz"
 
 def cb(option, opt_str, value, parser):
-        args=[]
-        for arg in parser.rargs:
-                if arg[0] != "-":
-                        args.append(arg)
-                else:
-                        del parser.rargs[:len(args)]
-                        break
-        if getattr(parser.values, option.dest):
-                args.extend(getattr(parser.values, option.dest))
-        setattr(parser.values, option.dest, args)
+    args=[]
+    for arg in parser.rargs:
+        if arg[0] != "-":
+            args.append(arg)
+	else:
+            del parser.rargs[:len(args)]
+	    break
+    if getattr(parser.values, option.dest):
+        args.extend(getattr(parser.values, option.dest))
+    setattr(parser.values, option.dest, args)
 
 def test_dwnld(p, u, t, f):
     url = ""
