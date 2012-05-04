@@ -45,7 +45,7 @@ def proxycmp(proxylist, url, filename):
     return tlist
     
 def main():
-    usage = "./find-fatest-proxy.py [options] -p proxy1 proxy2 ..."
+    usage = "./ffp-cli.py [options] -p proxy1 proxy2 ..."
     parser = optparse.OptionParser(usage)
     parser.add_option("-u", "--url", dest="url",
                      help="use URL for comparisons",
