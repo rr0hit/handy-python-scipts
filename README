@@ -3,8 +3,8 @@ handy-python-scipts
 
 A collection of a few handy python scripts.
 
-ffp-cli: find fastest proxy
----------------------------
+1. ffp-cli: find fastest proxy
+------------------------------
 
 A script that finds the fastest proxy from a given list by comparing the times
 taken to download contents from a URL. wget is used for the downloads.
